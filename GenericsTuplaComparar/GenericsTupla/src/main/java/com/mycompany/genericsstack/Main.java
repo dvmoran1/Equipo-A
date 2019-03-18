@@ -24,7 +24,7 @@ public class Main {
         GenericsTupla <Double,Double> point1= new GenericsTupla (12.12,1.12);
         GenericsTupla <Double,Double> point2= new GenericsTupla (12.12,1.12);
         
-        boolean isEqual=Utilities.<Double,Double> compare(point1, point2);
+        boolean isEqual=Utilities.compare(point1, point2);
         
         if(isEqual==true){System.out.println ("son iguales");}
         if(isEqual==false){ System.out.println ("no son iguales");}
