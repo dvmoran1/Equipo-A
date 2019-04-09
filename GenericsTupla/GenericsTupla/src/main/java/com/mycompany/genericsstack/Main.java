@@ -14,12 +14,14 @@ public class Main {
 
     public static void main(String[] args) {
         GenericsTupla [] otVector = {
-            new GenericsTupla ("Santiago BernabÈu", 125000),
-            new GenericsTupla ("Camp Nou", 159000),
-            new GenericsTupla ("Old Trafford", 95000)
+            new GenericsTupla<> ("Santiago BernabÈu", 125000),
+            new GenericsTupla<> ("Camp Nou", 159000),
+            new GenericsTupla<> ("Old Trafford", 95000)
         };
         
-        System.out.println (String.format ("Object\n\tEstadio con mayor capacidad: %s", estadioMayorCapacidad (otVector)));
+        System.out.println(otVector[0]);
+        
+        //System.out.println (String.format ("Object\n\tEstadio con mayor capacidad: %s", estadioMayorCapacidad (otVector)));
         
     }
         
