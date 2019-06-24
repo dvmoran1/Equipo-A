@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Datos_Empleados</servlet-name>
+        <servlet-class>Servlets.Datos_Empleados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Datos_Departamentos</servlet-name>
+        <servlet-class>Servlets.Datos_Departamentos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Datos_Empleados</servlet-name>
+        <url-pattern>/Datos_Empleados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Datos_Departamentos</servlet-name>
+        <url-pattern>/Datos_Departamentos</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
