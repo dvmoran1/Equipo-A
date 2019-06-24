@@ -40,11 +40,14 @@ public class Employees_C {
         Consultas Con = new Consultas();
         return Con.getED(id);
     }
+    public ArrayList<dept_emp> getDE (String id){
+        Consultas Con = new Consultas();
+        return Con.getDE(id);
+    }
     public ArrayList<departments> getDepartmets (){
         Consultas Con = new Consultas();
         return Con.getDepartmets();
     }
-    
 //   public static void main(String [] arg) {
 //        Employees_C c = new Employees_C();
 //        ArrayList<employees> a=  c.getEmployees();

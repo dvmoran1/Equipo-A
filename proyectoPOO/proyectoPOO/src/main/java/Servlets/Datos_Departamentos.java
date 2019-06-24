@@ -6,6 +6,7 @@
 package Servlets;
 
 import Modelo.departments;
+import Modelo.dept_emp;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -42,6 +43,13 @@ public class Datos_Departamentos extends HttpServlet {
     }
     private void especifico(HttpServletRequest request, HttpServletResponse response){    
         try{
+            System.out.println("si llega carnal :v");
+            String id = request.getParameter("ID");
+            Controlador.Employees_C cec = new Controlador.Employees_C();
+            ArrayList<dept_emp> lista_DE = cec.getDE(id);
+            System.out.println(lista_DE.isEmpty());
+            System.out.println(lista_DE.get(0).getFirst_name());
+            request.setAttribute("listado", lista_DE);
             RequestDispatcher rd = request.getRequestDispatcher("vista/datos_departamento.jsp");
             rd.forward(request, response);
         }catch(Exception e){

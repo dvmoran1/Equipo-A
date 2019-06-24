@@ -18,7 +18,7 @@ var Datos_Empleados = (function () {
         mostrarespecifico: function (npersonal) {
             $.get("Datos_Empleados", {
                 ACCION: "MostrarEspecifico",
-                npersonal: npersonal
+                id: npersonal
             }).then(function () {
                 $("#content").html(arguments[0]);
             });

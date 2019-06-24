@@ -22,19 +22,19 @@
                     <div class="row">
                         <div class="col-md-3 col-6 b-r"> <strong>Name of the employee</strong>
                             <br>
-                            <p class="text-muted">asdf</p>
+                            <p class="text-muted">${Emplo.first_name} ${Emplo.last_name}</p>
                         </div>
                         <div class="col-md-3 col-6 b-r"> <strong>Gender</strong>
                             <br>
-                            <p class="text-muted">asdf</p>
+                            <p class="text-muted">${Emplo.gender}</p>
                         </div>
                         <div class="col-md-3 col-6 b-r"> <strong>Birth date</strong>
                             <br>
-                            <p class="text-muted">asdf</p>
+                            <p class="text-muted">${Emplo.birth_date}</p>
                         </div>
                         <div class="col-md-3 col-6 b-r"> <strong>hire date</strong>
                             <br>
-                            <p class="text-muted">asdf</p>
+                            <p class="text-muted">${Emplo.hire_date}</p>
                         </div>
                     </div>
                     <br>
@@ -43,44 +43,44 @@
                     <div class="row">
                         <div class="col-md-4 col-6 b-r"> <strong>Salary</strong>
                             <br>
-                            <p class="text-muted">123</p>
+                            <p class="text-muted">${salarie.salary}</p>
                         </div>
                         <div class="col-md-4 col-6 b-r"> <strong>From date</strong>
                             <br>
-                            <p class="text-muted">asd</p>
+                            <p class="text-muted">${salarie.from_date}</p>
                         </div> 
                         <div class="col-md-4 col-6"> <strong>To date</strong>
                             <br>
-                            <p class="text-muted">asdf</p>
+                            <p class="text-muted">${salarie.to_date}</p>
                         </div>   
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-4 col-6 b-r"> <strong>Title</strong>
                             <br>
-                            <p class="text-muted">asd</p>
+                            <p class="text-muted">${title.title}</p>
                         </div> 
                         <div class="col-md-4 col-6 b-r"> <strong>From date</strong>
                             <br>
-                            <p class="text-muted">adf</p>
+                            <p class="text-muted">${title.from_date}</p>
                         </div>
                         <div class="col-md-4 col-6 b-r"> <strong>To date</strong>
                             <br>
-                            <p class="text-muted">adf</p>
+                            <p class="text-muted">${title.to_date}</p>
                         </div>
                     </div><br>
                     <div class="row">
                         <div class="col-md-4 col-4"> <strong>Department</strong>
                             <br>
-                            <p class="text-muted">asdf</p>
+                            <p class="text-muted">${depart.dept_name}</p>
                         </div> 
                         <div class="col-md-4 col-4 b-r"> <strong>From date</strong>
                             <br>
-                            <p class="text-muted">adf</p>
+                            <p class="text-muted">${depart.from_date}</p>
                         </div>
                         <div class="col-md-4 col-4 b-r"> <strong>To date</strong>
                             <br>
-                            <p class="text-muted">adf</p>
+                            <p class="text-muted">${depart.to_date}</p>
                         </div>             
                     </div>
                     <br>

@@ -188,10 +188,11 @@ public class Consultas {
         ResultSet rs = null;
         dept_emp DE = new dept_emp();
         try {
-            String consult = "SELECT * FROM employees.salaries\n" +
-                "where salaries.emp_no = ? \n" +
-                "order by salaries.from_date desc\n" +
-                "limit 1;";
+            String consult = "SELECT dept_emp.emp_no,employees.first_name, employees.last_name , dept_emp.dept_no, departments.dept_name, from_date, to_date FROM employees.dept_emp\n" +
+            "join departments on dept_emp.dept_no = departments.dept_no\n" +
+            "join employees on employees.emp_no = dept_emp.emp_no\n" +
+            "where dept_emp.emp_no = ?\n" +
+            "limit 1;";
             pst = con.getConnection().prepareStatement(consult);
             pst.setString(1, id);
             rs = pst.executeQuery();
@@ -258,5 +259,50 @@ public class Consultas {
             }
         }
         return listDepartmets;
+    }
+    
+    public ArrayList<dept_emp> getDE(String id) {
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        ArrayList<dept_emp> list_DE = new ArrayList<>();
+        try {
+            String consult = "SELECT dept_emp.emp_no,employees.first_name, employees.last_name , dept_emp.dept_no, departments.dept_name, from_date, to_date FROM employees.dept_emp\n" +
+            "join departments on dept_emp.dept_no = departments.dept_no\n" +
+            "join employees on employees.emp_no = dept_emp.emp_no\n" +
+            "where dept_emp.dept_no = ?\n" +
+            "limit 10;";
+            pst = con.getConnection().prepareStatement(consult);
+            pst.setString(1, id);
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                dept_emp DE = new dept_emp();
+                DE.setEmp_no(rs.getInt("emp_no"));
+                DE.setFirst_name(rs.getString("first_name"));
+                DE.setLast_name(rs.getString("last_name"));
+                DE.setDept_no(rs.getString("dept_no"));
+                DE.setDept_name(rs.getString("dept_name"));
+                DE.setFrom_date(rs.getString("from_date"));
+                DE.setTo_date(rs.getString("to_date"));
+               list_DE.add(DE);
+
+            }
+        } catch (Exception e) {
+            System.err.println("Error" + e);
+        } finally {
+            try {
+                if (con.getConnection() != null) {
+                    con.getConnection().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (Exception e) {
+                System.err.println("Error " + e);
+            }
+        }
+        return list_DE;
     }
 }

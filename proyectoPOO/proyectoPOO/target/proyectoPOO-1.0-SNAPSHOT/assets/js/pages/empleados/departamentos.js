@@ -7,17 +7,17 @@ var Datos_Departamentos = (function () {
             }).then(function () {
                 $("#content").html(arguments[0]);
                 $(".verdatos").unbind('click').bind('click', function () {
-                    npersonal = $(this).parents("tr").find("td").eq(0).html();
-                    Datos_Departamentos.mostrarespecifico(npersonal);
+                    id = $(this).parents("tr").find("td").eq(0).html();
+                    Datos_Departamentos.mostrarespecifico(id);
                 });
                 $("#datos_departamentos").DataTable({
                     "scrollX": true});
             });
         },
-        mostrarespecifico: function (npersonal) {
+        mostrarespecifico: function (id) {
             $.get("Datos_Departamentos", {
                 ACCION: "MostrarEspecifico",
-                npersonal: npersonal
+                ID: id
             }).then(function () {
                 $("#content").html(arguments[0]);
                 $("#datos_departamentos").DataTable({

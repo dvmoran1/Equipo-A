@@ -5,7 +5,11 @@
  */
 package Servlets;
 
+import Modelo.departments;
+import Modelo.dept_emp;
 import Modelo.employees;
+import Modelo.salaries;
+import Modelo.titles;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -42,6 +46,21 @@ public class Datos_Empleados extends HttpServlet {
     }
     private void especifico(HttpServletRequest request, HttpServletResponse response){    
         try{
+            String id = request.getParameter("id");
+            Controlador.Employees_C cec = new Controlador.Employees_C();
+            
+            employees Emplo = cec.getEmployee(id);
+            request.setAttribute("Emplo", Emplo);
+            
+            salaries salarie=cec.getSalarie(id);
+            request.setAttribute("salarie",salarie);
+            
+            titles title=cec.getTitle(id);
+            request.setAttribute("title",title);
+            
+           dept_emp depart=cec.getED(id);
+            request.setAttribute("depart",depart);
+            
             RequestDispatcher rd = request.getRequestDispatcher("vista/datosempleados.jsp");
             rd.forward(request, response);
         }catch(Exception e){

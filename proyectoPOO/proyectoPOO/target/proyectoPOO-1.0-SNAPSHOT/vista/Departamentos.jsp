@@ -30,8 +30,8 @@
                         <tbody>
                             <c:forEach items="${requestScope.listado}" var="listado">
                                 <tr class="odd gradeX" >
-                                    <td> ${listado.dept_no} </td>
-                                    <td> ${listado.dept_name} </td> 
+                                    <td>${listado.dept_no}</td>
+                                    <td>${listado.dept_name}</td> 
                                     <td class="center" >
                                         <button class="btn btn-success btn-xs verdatos" >
                                             <i class="fa fa-check"></i>
